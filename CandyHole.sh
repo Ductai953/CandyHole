@@ -2,7 +2,6 @@
 #!/bin/bash
 
 # CandyHole - Paqet Tunnel Setup Script
-# Enhanced version with colors and user-friendly interface
 
 # Color definitions
 RED='\033[0;31m'
@@ -239,11 +238,50 @@ fi
 
 iface_name=$(echo "$default_route" | awk '{print $5}')
 gateway=$(echo "$default_route" | awk '{print $3}')
-this_server_ip=$(ip route get "$gateway" | awk '{print $7}' | head -1)
+this_server_ip=$(ip route get "$gateway" | grep -oP 'src \K\S+' | head -1)
+
+# Fallback method if the above didn't work
+if [ -z "$this_server_ip" ] || [ "$this_server_ip" = "0" ]; then
+    this_server_ip=$(ip addr show "$iface_name" | grep -oP 'inet \K[\d.]+' | head -1)
+fi
+
+# Another fallback using hostname
+if [ -z "$this_server_ip" ] || [ "$this_server_ip" = "0" ]; then
+    this_server_ip=$(hostname -I | awk '{print $1}')
+fi
 
 print_info "Interface: $iface_name"
 print_info "Gateway: $gateway"
 print_info "Local IP: $this_server_ip"
+
+# Confirm detected local IP address
+echo ""
+print_header "IP Address Confirmation"
+while true; do
+    read -p "Is this local IP address correct ($this_server_ip)? (y/n): " confirm_ip
+    case $confirm_ip in
+        [Yy]|[Yy][Ee][Ss])
+            print_success "Using detected IP address: $this_server_ip"
+            break
+            ;;
+        [Nn]|[Nn][Oo])
+            while true; do
+                read -p "Enter the correct local IP address: " user_ip
+                if validate_ip "$user_ip"; then
+                    this_server_ip="$user_ip"
+                    print_success "Using custom IP address: $this_server_ip"
+                    break
+                else
+                    print_error "Invalid IP address format '$user_ip'. Please enter a valid IP address."
+                fi
+            done
+            break
+            ;;
+        *)
+            print_error "Please answer 'y' for yes or 'n' for no."
+            ;;
+    esac
+done
 
 # Test gateway connectivity
 print_info "Testing gateway connectivity..."
@@ -255,9 +293,19 @@ else
 fi
 
 # Get MAC address of gateway
-mac_address=$(arp -n "$gateway" 2>/dev/null | awk '{print $4}' | head -1)
+# First try to populate ARP table by pinging
+ping -c 1 -W 1 "$gateway" > /dev/null 2>&1
+
+# Try to get MAC from ARP table
+mac_address=$(arp -n "$gateway" 2>/dev/null | grep -v '^Address' | awk '{print $3}' | grep -E '^([0-9a-fA-F]{2}:){5}[0-9a-fA-F]{2}$' | head -1)
+
+# Fallback: try to get from ip neigh command (more modern)
+if [ -z "$mac_address" ]; then
+    mac_address=$(ip neigh show "$gateway" 2>/dev/null | awk '{print $5}' | head -1)
+fi
+
 if [ -z "$mac_address" ] || [ "$mac_address" == "(incomplete)" ]; then
-    print_warning "Could not get gateway MAC address. Using default."
+    print_warning "Could not get gateway MAC address. Using default (this may affect performance)."
     mac_address="00:00:00:00:00:00"
 else
     print_info "Gateway MAC: $mac_address"
