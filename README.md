@@ -1,5 +1,8 @@
 # 🍬 CandyHole - Paqet Tunnel Setup
 
+[![🇺🇸 English](https://img.shields.io/badge/🇺🇸_English-README.md-blue)](README.md)
+[![🇮🇷 فارسی](https://img.shields.io/badge/🇮🇷_فارسی-fa--readme.md-green)](fa-readme.md)
+
 A user-friendly script to set up Paqet tunnels between Iran and foreign servers, helping bypass internet censorship.
 
 ## Quick Start
@@ -28,6 +31,9 @@ Or run directly without downloading:
 sudo curl -sSL https://raw.githubusercontent.com/AmiRCandy/CandyHole/master/CandyHole.sh | sudo bash
 ```
 
+## Screenshot
+
+![Terminal Interface](cmd.png)
 
 ## Features
 
@@ -176,3 +182,4 @@ After setup, you can edit the YAML configuration files to:
 ---
 
 **Happy tunneling! 🌐**
+
