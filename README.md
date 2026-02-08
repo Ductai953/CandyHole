@@ -13,7 +13,7 @@ Download and run the script directly from GitHub:
 
 ```bash
 # Download the script
-wget https://raw.githubusercontent.com/AmiRCandy/CandyHole/master/CandyHole.sh
+wget https://raw.githubusercontent.com/AmiRCandy/CandyHole/main/CandyHole.sh
 
 
 # Make it executable (Linux/Unix systems)
@@ -28,7 +28,7 @@ sudo ./CandyHole.sh
 Or run directly without downloading:
 
 ```bash
-sudo curl -sSL https://raw.githubusercontent.com/AmiRCandy/CandyHole/master/CandyHole.sh | sudo bash
+sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/AmiRCandy/CandyHole/main/CandyHole.sh)"
 ```
 
 ## Screenshot
@@ -56,14 +56,14 @@ sudo curl -sSL https://raw.githubusercontent.com/AmiRCandy/CandyHole/master/Cand
 Download and run the script:
 
 ```bash
-wget https://raw.githubusercontent.com/AmiRCandy/CandyHole/master/CandyHole.sh
+wget https://raw.githubusercontent.com/AmiRCandy/CandyHole/main/CandyHole.sh
 chmod +x CandyHole.sh
 sudo ./CandyHole.sh
 ```
 
 Or run directly:
 ```bash
-sudo curl -sSL https://raw.githubusercontent.com/AmiRCandy/CandyHole/master/CandyHole.sh | sudo bash
+sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/AmiRCandy/CandyHole/main/CandyHole.sh)"
 ```
 
 ### Server Setup (Foreign Server)
@@ -169,7 +169,7 @@ After setup, you can edit the YAML configuration files to:
 ## Repository
 
 - **CandyHole Repository**: [https://github.com/AmiRCandy/CandyHole](https://github.com/AmiRCandy/CandyHole)
-- **Direct Script URL**: [https://raw.githubusercontent.com/AmiRCandy/CandyHole/master/CandyHole.sh](https://raw.githubusercontent.com/AmiRCandy/CandyHole/master/CandyHole.sh)
+- **Direct Script URL**: [https://raw.githubusercontent.com/AmiRCandy/CandyHole/master/CandyHole.sh](https://raw.githubusercontent.com/AmiRCandy/CandyHole/main/CandyHole.sh)
 
 ## Support
 
@@ -182,4 +182,5 @@ After setup, you can edit the YAML configuration files to:
 ---
 
 **Happy tunneling! 🌐**
+
 
